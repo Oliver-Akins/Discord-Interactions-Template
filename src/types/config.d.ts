@@ -10,4 +10,8 @@ interface Config {
 		host: string;
 		port: number;
 	};
+	log: {
+		name: string;
+		level: "silly" | "trace" | "debug" | "info" | "warn" | "error" | "fatal";
+	};
 };
