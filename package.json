@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Oliver-Akins/Discord-Interactions-Template/issues"
   },
-  "homepage": "https://github.com/Oliver-Akins/Discord-Interactions-Template#readme"
+  "homepage": "https://github.com/Oliver-Akins/Discord-Interactions-Template#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.2.1",
+    "toml": "^3.0.0",
+    "tslog": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/hapi__hapi": "^20.0.9"
+  }
 }
