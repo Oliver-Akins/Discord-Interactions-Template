@@ -1,5 +1,6 @@
 import { init_webserver } from "./webserver";
 import { init_commands } from "./commands";
+import { default_db } from "./constants";
 import { Logger } from "tslog";
 import toml from "toml";
 import fs from "fs";
@@ -27,9 +28,14 @@ export const log = new Logger({
 // Load the database
 if (!fs.existsSync(`data/db.json`)) {
 	log.info(`Can't find database file, creating default`);
-	fs.writeFileSync(`data/db.json`, `{}`);
+	try {
+		fs.writeFileSync(`data/db.json`, default_db);
+	} catch (err) {
+		log.error(`Unable to create the default database, make sure the data directory exists.`);
+		process.exit(1);
+	};
 };
-export const db = JSON.parse(fs.readFileSync(`data/db.json`, `utf-8`));
+export const db: Database = JSON.parse(fs.readFileSync(`data/db.json`, `utf-8`));
 
 
 // Setup the utilities that are needed throughout the system
