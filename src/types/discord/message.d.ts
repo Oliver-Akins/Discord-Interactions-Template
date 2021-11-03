@@ -15,13 +15,13 @@ interface SendMessage {
 	/** This is ONLY used when transmitting via `multipart/form-data` */
 	payload_json?: string;
 
-	allowed_mentions: {};
+	allowed_mentions?: {};
 
-	message_reference: {};
+	message_reference?: {};
 
-	components: MessageComponent[];
+	components?: MessageComponent[];
 
-	sticker_ids: Snowflake[];
+	sticker_ids?: Snowflake[];
 }
 
 
