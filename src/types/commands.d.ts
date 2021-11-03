@@ -17,7 +17,10 @@ interface Command {
 	/** The data that gets sent to Discord which represents the command. */
 	structure: CreateApplicationCommand;
 
-	/** The method that handles the interaction when a user runs the command */
+	/**
+	 * The method that handles the interaction when any event comes through
+	 * relating to this command. Including autocomplete events.
+	 */
 	processor(data: Interaction): InteractionResponse;
 }
 
