@@ -18,10 +18,12 @@
   "homepage": "https://github.com/Oliver-Akins/Discord-Interactions-Template#readme",
   "dependencies": {
     "@hapi/hapi": "^20.2.1",
+    "axios": "^0.24.0",
     "glob": "^7.2.0",
     "path": "^0.12.7",
     "toml": "^3.0.0",
-    "tslog": "^3.2.2"
+    "tslog": "^3.2.2",
+    "tweetnacl": "^1.0.3"
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
