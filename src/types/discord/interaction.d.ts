@@ -18,6 +18,7 @@ interface Interaction {
 	 */
 	data?: InteractionData;
 	guild_id?: Snowflake;
+	channel_id?: Snowflake
 
 	/**
 	 * The guild member object for the user that triggered the interaction only
