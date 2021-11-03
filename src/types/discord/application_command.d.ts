@@ -1,9 +1,4 @@
-enum ApplicationCommandType {
-	/** Slash Command */
-	ChatInput = 1,
-	User,
-	Message,
-}
+type CommandType = 1 | 2 | 3;
 
 interface ApplicationCommand {
 	id: Snowflake;
@@ -13,7 +8,7 @@ interface ApplicationCommand {
 	 *
 	 * Defaults to `ApplicationCommandType.ChatInput` if not provided
 	 */
-	type?: ApplicationCommandType;
+	type?: CommandType;
 	application_id: Snowflake;
 	guild_id?: Snowflake;
 	name: string;

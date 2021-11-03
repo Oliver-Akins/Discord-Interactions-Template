@@ -1,42 +1,5 @@
-enum InteractionType {
-	Ping = 1,
-	ApplicationCommand,
-	MessageComponent,
-	AutoComplete,
-}
-
-enum InteractionCallback {
-
-	/** ACK a Ping */
-	pong = 1,
-
-	/** Respond to an interaction with a message */
-	message_with_source,
-
-	/**
-	 * ACK and interaction and edit a response later. The user sees a loading
-	 * state.
-	 */
-	deffered_message_with_source,
-
-	/**
-	 * ACK an interaction and edit the original message later. The user does
-	 * not see a loading state
-	 * ! Only valid for component-based interactions
-	 */
-	deffered_update_message,
-
-	/**
-	 * Edits the message the component was attached to
-	 * ! Only valid for component-based interactions
-	 */
-	update_message,
-
-	/**
-	 * Respond to an autocomplete interaction with suggested choices
-	 */
-	command_autocomplete_result,
-}
+type InteractionType = 1 | 2 | 3 | 4
+type InteractionCallback = 1 | 4 | 5 | 6 | 7 | 8
 
 /** The data that must be returned to Discord so they know we got the message */
 interface InteractionResponse {

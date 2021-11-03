@@ -22,6 +22,8 @@ interface SendMessage {
 	components?: MessageComponent[];
 
 	sticker_ids?: Snowflake[];
+
+	flags?: number;
 }
 
 
@@ -42,7 +44,7 @@ interface Message extends SendMessage {
 	author: any;
 
 	/**
-	 * 
+	 *
 	 */
 	member?: any;
 }
