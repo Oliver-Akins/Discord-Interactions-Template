@@ -7,7 +7,7 @@ const data: Command = {
 		type: ApplicationCommandType.ChatInput,
 	},
 
-	processor(data) {
+	processor(_) {
 		return {
 			type: InteractionCallback.pong,
 			data: {
