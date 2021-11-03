@@ -1,11 +1,6 @@
 type MessageComponent = ActionRow | Button | LinkButton | SelectMenu
 
-/** The message components that Discord accepts */
-enum MessageComponentType {
-	ActionRow = 1,
-	Button,
-	SelectMenu
-}
+type MessageComponentType = 1 | 2 | 3
 
 /**
  * The component which tells Discord how to display other components. Action

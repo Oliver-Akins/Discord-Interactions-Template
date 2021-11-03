@@ -44,6 +44,13 @@ export enum InteractionType {
 	AutoComplete,
 }
 
+/** The message components that Discord accepts */
+export enum MessageComponentType {
+	ActionRow = 1,
+	Button,
+	SelectMenu
+}
+
 export const discord_api_base = `https://discord.com/api/v9`;
 
 export const default_db = `{
