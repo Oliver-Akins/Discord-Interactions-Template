@@ -1,5 +1,5 @@
 interface User {
-	is: Snowflake;
+	id: Snowflake;
 	username: string;
 	discriminator: string;
 	avatar?: string;
