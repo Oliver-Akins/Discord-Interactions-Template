@@ -21,12 +21,5 @@ interface Command {
 	 * The method that handles the interaction when any event comes through
 	 * relating to this command. Including autocomplete events.
 	 */
-	processor(data: Interaction): InteractionResponse;
-}
-
-interface CommandRegistrationData {
-	global: Command[];
-	guilds: {
-		[index: Snowflake]: Command[];
-	};
+	processor(event: Interaction): InteractionResponse;
 }
