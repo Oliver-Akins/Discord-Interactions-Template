@@ -1,3 +1,4 @@
+import { init_webserver } from "./webserver";
 import { Logger } from "tslog";
 import toml from "toml";
 import fs from "fs";
@@ -31,6 +32,8 @@ export const db = JSON.parse(fs.readFileSync(`data/db.json`, `utf-8`));
 
 
 // Setup the utilities that are needed throughout the system
-async function init() {};
+async function init() {
+	await init_webserver();
+};
 
 init();
