@@ -14,7 +14,7 @@ interface Command {
 	guilds: Snowflake[];
 
 	/** The data that gets sent to Discord which represents the command. */
-	command: CreateApplicationCommand;
+	structure: CreateApplicationCommand;
 
 	/** The method that handles the interaction when a user runs the command */
 	processor(): void
