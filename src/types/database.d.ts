@@ -11,4 +11,7 @@ interface Database {
 			[index: string]: ApplicationCommand[];
 		};
 	};
+	storage: {
+		[index: string]: {[index: string]: any};
+	};
 }
