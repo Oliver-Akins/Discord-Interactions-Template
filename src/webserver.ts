@@ -1,5 +1,5 @@
 import { Server, ServerRoute } from "@hapi/hapi";
-import { config, log } from "./main";
+import { config, log } from "~/main";
 import glob from "glob";
 import path from "path";
 

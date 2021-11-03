@@ -1,5 +1,6 @@
-import { InteractionCallback, MessageComponentType, ButtonStyle } from "../../constants";
-import { log } from "../../main";
+import { MessageComponentType, ButtonStyle } from "~/utils/enums/ComponentType";
+import { InteractionResponseType } from "~/utils/enums/InteractionType";
+import { log } from "~/main";
 
 const increment_button: Component = {
 	structure: {
@@ -15,7 +16,7 @@ const increment_button: Component = {
 		let value = parseInt(event.message.content ?? "0");
 
 		return {
-			type: InteractionCallback.update_message,
+			type: InteractionResponseType.update_message,
 			data: {
 				content: `${++value}`
 			}

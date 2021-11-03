@@ -1,4 +1,5 @@
-import { CommandType, InteractionCallback } from "../constants";
+import { InteractionResponseType } from "~/utils/enums/InteractionType";
+import { CommandType } from "~/utils/enums/CommandType";
 import { log } from "../main";
 
 const data: Command = {
@@ -13,7 +14,7 @@ const data: Command = {
 	processor(_) {
 		log.info(`Ponging!`);
 		return {
-			type: InteractionCallback.message_with_source,
+			type: InteractionResponseType.message_with_source,
 			data: {
 				content: `Pong!`,
 			},

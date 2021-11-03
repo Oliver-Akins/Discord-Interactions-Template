@@ -1,6 +1,8 @@
+import { InteractionResponseType } from "~/utils/enums/InteractionType";
+import { MessageComponentType } from "~/utils/enums/ComponentType";
+import { CommandType } from "~/utils/enums/CommandType";
 import decrement_button from "../components/buttons/decrement";
 import increment_button from "../components/buttons/increment";
-import { CommandType, InteractionCallback, MessageComponentType } from "../constants";
 import { log } from "../main";
 
 const data: Command = {
@@ -16,7 +18,7 @@ const data: Command = {
 		log.info(`Counting!`);
 
 		return {
-			type: InteractionCallback.message_with_source,
+			type: InteractionResponseType.message_with_source,
 			data: {
 				content: `0`,
 				components: [{

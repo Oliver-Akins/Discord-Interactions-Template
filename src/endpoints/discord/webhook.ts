@@ -1,6 +1,6 @@
-import { InteractionType, InteractionCallback } from "../../constants";
+import { InteractionResponseType, InteractionType } from "~/utils/enums/InteractionType";
 import { Request, ResponseToolkit } from "@hapi/hapi";
-import { config, db, log } from "../../main";
+import { config, db, log } from "~/main";
 import boom from "@hapi/boom";
 import nacl from "tweetnacl";
 
@@ -35,7 +35,7 @@ export default {
 			// Discord pinging us to make sure we will respond
 			case InteractionType.Ping:
 				return {
-					type: InteractionCallback.pong
+					type: InteractionResponseType.pong
 				};
 
 			// Command interaction events (both autocomplete and the final event)

@@ -1,7 +1,7 @@
+import { ButtonStyle, MessageComponentType } from "~/utils/enums/ComponentType";
+import { db, log } from "~/main";
 import glob from "glob";
 import path from "path";
-import { ButtonStyle, MessageComponentType } from "./constants";
-import { db, log } from "./main";
 
 export async function init_components() {
 

@@ -1,5 +1,5 @@
-import { discord_api_base } from "./constants";
-import { config, db, log } from "./main";
+import { discord_api_base } from "~/constants";
+import { config, db, log } from "~/main";
 import axios from "axios";
 import glob from "glob";
 import path from "path";
