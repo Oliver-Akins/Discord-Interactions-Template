@@ -1,3 +1,6 @@
+// Filepath alias resolution
+import "module-alias/register";
+
 import { init_components } from "./components";
 import { init_webserver } from "./webserver";
 import { init_commands } from "./commands";
