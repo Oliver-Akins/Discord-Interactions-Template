@@ -4,6 +4,8 @@ interface Config {
 		guild: Snowflake;
 	};
 	discord: {
+		app_id: string;
+		public_key: string;
 		token: string;
 	};
 	server: {
