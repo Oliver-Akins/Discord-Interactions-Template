@@ -1,6 +1,7 @@
 type MessageComponent = ActionRow | Button | LinkButton | SelectMenu
 
 type MessageComponentType = 1 | 2 | 3
+type ButtonStyle = 1 | 2 | 3 | 4 | 5
 
 /**
  * The component which tells Discord how to display other components. Action
@@ -9,21 +10,8 @@ type MessageComponentType = 1 | 2 | 3
  *	- Up to 1 Select Menu. If it has a select menu, nothing else can be included in the row.
  */
 interface ActionRow {
-	type: MessageComponentType.ActionRow;
+	type: 1;
 	components: Exclude<MessageComponent, ActionRow>[];
-}
-
-/**
- * The different styles of buttons that Discord supports.
- */
-enum ButtonStyle {
-	/** Blurple */ Primary = 1,
-	/** Gray */ Secondary,
-	/** Green */ Success,
-	/** Red */ Danger,
-
-	/** Gray, navigates to a URL */
-	Link
 }
 
 /** Triggers a basic interaction event */

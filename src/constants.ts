@@ -51,6 +51,19 @@ export enum MessageComponentType {
 	SelectMenu
 }
 
+/**
+ * The different styles of buttons that Discord supports.
+ */
+export enum ButtonStyle {
+	/** Blurple */ Primary = 1,
+	/** Gray */ Secondary,
+	/** Green */ Success,
+	/** Red */ Danger,
+
+	/** Gray, navigates to a URL */
+	Link
+}
+
 export const discord_api_base = `https://discord.com/api/v9`;
 
 export const default_db = `{
