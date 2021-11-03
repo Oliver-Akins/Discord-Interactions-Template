@@ -19,4 +19,8 @@ export async function init_webserver() {
 		log.debug(`Registering route: ${route.method} ${route.path}`);
 		server.route(route);
 	};
+
+	server.start().then(() => {
+		log.info(`Server running on: ${config.server.host}:${config.server.port}`);
+	});
 };
