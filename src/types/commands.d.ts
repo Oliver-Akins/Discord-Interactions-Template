@@ -19,3 +19,10 @@ interface Command {
 	/** The method that handles the interaction when a user runs the command */
 	processor(): void
 }
+
+interface CommandRegistrationData {
+	global: Command[];
+	guilds: {
+		[index: Snowflake]: Command[];
+	};
+}
