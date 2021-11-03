@@ -1,10 +1,10 @@
 // Filepath alias resolution
 import "module-alias/register";
 
-import { init_components } from "./components";
-import { init_webserver } from "./webserver";
-import { init_commands } from "./commands";
-import { default_db } from "./constants";
+import { init_components } from "~/components";
+import { init_webserver } from "~/webserver";
+import { init_commands } from "~/commands";
+import { default_db } from "~/constants";
 import { Logger } from "tslog";
 import toml from "toml";
 import fs from "fs";
