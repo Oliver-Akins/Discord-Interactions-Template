@@ -31,6 +31,6 @@
     "@types/hapi__hapi": "^20.0.9"
   },
   "_moduleAliases": {
-    "#": "./dist"
+    "~": "./dist"
   }
 }
