@@ -6,7 +6,7 @@ export async function init_commands() {
 	// Register all the Discord commands that need to be registered, while making
 	// sure that in development mode we register the commands that are needed.
 	let commands = glob.sync(
-		`commands/**/(!*.map)`,
+		`commands/**/!(*.map)`,
 		{ cwd: __dirname, nodir: true }
 	);
 	let register: CommandRegistrationData = {

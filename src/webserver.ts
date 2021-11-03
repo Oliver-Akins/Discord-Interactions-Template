@@ -11,7 +11,7 @@ export async function init_webserver() {
 
 	// Register all the endpoints that we need for the server functionality
 	let files = glob.sync(
-		`endpoints/**/(!*.map)`,
+		`endpoints/**/!(*.map)`,
 		{ cwd: __dirname, nodir: true }
 	);
 	for (var file of files) {
