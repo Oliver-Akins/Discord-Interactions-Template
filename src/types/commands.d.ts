@@ -7,11 +7,12 @@ interface Command {
 	enabled: boolean;
 
 	/**
-	 * The guilds that this command gets registered into. Leave as an empty
-	 * array for a global command. When development mode is enabled, this will
-	 * be ignored and will use the development server option.
+	 * The guilds that this command gets registered into. Leave undefined
+	 * for a global command. When development mode is enabled, this will be
+	 * ignored and will register all commands to development guild, and nowhere
+	 * else.
 	 */
-	guilds: Snowflake[];
+	guilds?: Snowflake[];
 
 	/** The data that gets sent to Discord which represents the command. */
 	structure: CreateApplicationCommand;
