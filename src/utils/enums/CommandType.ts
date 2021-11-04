@@ -1,7 +1,7 @@
 /**
  * The type of Application Command for Discord.
  */
-enum CommandType {
+const enum CommandType {
 
 	/**
 	 * Chat command, accepts user input and can be auto-completed
@@ -18,7 +18,7 @@ enum CommandType {
 /**
  * The option type for slash commands
  */
-enum CommandOptionType {
+const enum CommandOptionType {
 	Subcommand = 1,
 	SubcommandGroup,
 	String,

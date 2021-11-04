@@ -1,4 +1,4 @@
-enum MessageType {
+const enum MessageType {
 	Default,
 	Recipient_Add,
 	Recipient_Remove,

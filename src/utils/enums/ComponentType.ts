@@ -1,5 +1,5 @@
 /** The message components that Discord accepts */
-enum MessageComponentType {
+const enum MessageComponentType {
 	ActionRow = 1,
 	Button,
 	SelectMenu
@@ -8,7 +8,7 @@ enum MessageComponentType {
 /**
  * The different styles of buttons that Discord supports.
  */
-enum ButtonStyle {
+const enum ButtonStyle {
 	/** Blurple */ Primary = 1,
 	/** Gray */ Secondary,
 	/** Green */ Success,

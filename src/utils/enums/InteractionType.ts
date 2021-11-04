@@ -1,5 +1,5 @@
 /** The type of interaction that Discord sends to us */
-enum InteractionType {
+const enum InteractionType {
 
 	/** Discord's verification that we are still able to respond to requests */
 	Ping = 1,
@@ -18,7 +18,7 @@ enum InteractionType {
 }
 
 /** The type of response to Discord this is */
-enum InteractionResponseType {
+const enum InteractionResponseType {
 
 	/** ACK a Ping */
 	pong = 1,
