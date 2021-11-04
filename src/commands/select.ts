@@ -11,23 +11,23 @@ const data: Command = {
 		options: [
 			{
 				type: CommandOptionType.String,
-				name: `Option 1`,
+				name: `option-1`,
 				description: `The first option in the dropdown`,
 			},
 			{
 				type: CommandOptionType.String,
-				name: `Option 2`,
+				name: `option-2`,
 				description: `The second option in the dropdown`,
 			},
 			{
 				type: CommandOptionType.String,
-				name: `Option 3`,
+				name: `option-3`,
 				description: `The third option in the dropdown`,
 				required: false,
 			},
 			{
 				type: CommandOptionType.String,
-				name: `Option 4`,
+				name: `option-4`,
 				description: `The fourth option in the dropdown`,
 				required: false,
 			}
