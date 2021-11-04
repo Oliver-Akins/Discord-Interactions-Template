@@ -80,12 +80,12 @@ export async function init_commands() {
 	};
 
 	// register the global commands so that they have a bit more time to update
-	let registered_global = await axios.put<ApplicationCommand[]>(
+	let registered_global = await axios.put<AppCommand[]>(
 		`${discord_api_base}/applications/${config.discord.app_id}/commands`,
 		global,
 		{ headers: { "Authorization": `Bot ${config.discord.token}` }}
-	).catch(err => {
-		log.prettyError(err);
+	).catch((err: Error) => {
+		log.error(err.name, err.message);
 	});
 
 	if (registered_global?.status !== 200) {
@@ -102,7 +102,7 @@ export async function init_commands() {
 			guilds[gid],
 			{ headers: { "Authorization": `Bot ${config.discord.token}` }}
 		).catch(err => {
-			log.prettyError(err);
+			log.error(err.name, err.message);
 		});
 
 		if (registered_guild?.status !== 200) {
