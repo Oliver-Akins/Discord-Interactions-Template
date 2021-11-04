@@ -1,6 +1,3 @@
-import { InteractionResponseType } from "~/utils/enums/InteractionType";
-import { MessageComponentType } from "~/utils/enums/ComponentType";
-import { CommandType } from "~/utils/enums/CommandType";
 import decrement_button from "../components/buttons/decrement";
 import increment_button from "../components/buttons/increment";
 import { log } from "../main";

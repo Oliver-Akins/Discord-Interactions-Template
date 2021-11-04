@@ -1,5 +1,3 @@
-import { InteractionResponseType } from "~/utils/enums/InteractionType";
-import { CommandType } from "~/utils/enums/CommandType";
 import { log } from "../main";
 
 const data: Command = {

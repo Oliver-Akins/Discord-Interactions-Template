@@ -1,5 +1,3 @@
-import { MessageComponentType, ButtonStyle } from "~/utils/enums/ComponentType";
-import { InteractionResponseType } from "~/utils/enums/InteractionType";
 import { log } from "~/main";
 
 const increment_button: Component = {

@@ -1,7 +1,7 @@
 /**
  * The type of Application Command for Discord.
  */
-export enum CommandType {
+enum CommandType {
 
 	/**
 	 * Chat command, accepts user input and can be auto-completed
@@ -14,3 +14,23 @@ export enum CommandType {
 	/** Context menu (message), receives a message object as it's sole argument */
 	message,
 };
+
+/**
+ * The option type for slash commands
+ */
+enum CommandOptionType {
+	Subcommand = 1,
+	SubcommandGroup,
+	String,
+	/** Any integer between -2^53 abd 2^53 */
+	Integer,
+	Boolean,
+	User,
+	/** Includes and channel types + categories */
+	Channel,
+	Role,
+	/** Includes users and roles */
+	Mentionable,
+	/** Any double between -2^53 and 2^53 */
+	Number,
+}
