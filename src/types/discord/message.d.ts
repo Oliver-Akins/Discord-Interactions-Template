@@ -1,34 +1,5 @@
-/** The data that is sent to Discord to create a message */
-interface SendMessage {
-	/** Up to 2000 characters */
-	content?: string;
-
-	/** Whether the clients should speak the message. Default: `false` */
-	tts?: boolean;
-
-	/** The contents of the file */
-	file?: any;
-
-	/** The embedded `rich` content. Up to 6000 characters total. */
-	embeds?: MessageEmbed[];
-
-	/** This is ONLY used when transmitting via `multipart/form-data` */
-	payload_json?: string;
-
-	allowed_mentions?: {};
-
-	message_reference?: {};
-
-	components?: MessageComponent[];
-
-	sticker_ids?: Snowflake[];
-
-	flags?: number;
-}
-
-
 /** The message object that Discord stores in it's system */
-interface Message extends SendMessage {
+interface Message {
 	id: Snowflake;
 	channel_id: Snowflake;
 	guild_id?: Snowflake;
@@ -43,71 +14,84 @@ interface Message extends SendMessage {
 	 */
 	author: any;
 
-	/**
-	 *
-	 */
 	member?: any;
-}
 
+	content: string;
 
-interface Embed {
-	title?: string;
-	type: "rich";
-	description?: string;
-	url?: string;
-	timestamp?: string;
-	color?: number;
-	footer?: EmbedFooter;
-	image?: EmbedImage;
-	thumbnail?: EmbedThumbnail;
-	video?: EmbedVideo;
-	provider?: EmbedProvider;
-	author?: EmbedAuthor;
-	fields?: EmbedField[];
-}
+	/** The ISO8601 timestamp of when the message was sent. */
+	timestamp: string;
 
-interface EmbedFooter {
-	text: string;
-	icon_url?: string;
-	proxy_icon_url?: string;
-}
+	/** The ISO8601 timestamp of when the message was last edited. */
+	edited_timestamp?: string;
 
-interface EmbedImage {
-	url: string;
-	proxy_url?: string;
-	height?: number;
-	width?: number;
-}
+	tts: boolean;
 
-interface EmbedThumbnail {
-	url: string;
-	proxy_url?: string;
-	height?: number;
-	width?: number;
-}
+	mention_everyone: boolean;
 
-interface EmbedVideo {
-	url?: string;
-	proxy_url?: string;
-	height?: number;
-	width?: number;
-}
+	mentions: unknown;
 
-interface EmbedProvider {
-	name?: string;
-	url?: string;
-}
+	mention_roles: Snowflake[];
 
-interface EmbedAuthor {
-	name: string;
-	url?: string;
-	icon_url?: string;
-	proxy_icon_url?: string;
-}
+	mention_channels?: unknown[];
 
-interface EmbedField {
-	name: string;
-	value: string;
-	/** Default: `false` */
-	inline?: boolean;
+	attachments: unknown[];
+
+	embeds: Embed[];
+
+	reactions?: unknown[];
+
+	/** Used for validating a message was sent */
+	nonce?: number | string;
+
+	pinned: boolean;
+
+	webhook_id?: Snowflake;
+
+	type: unknown;
+
+	/** Sent with Rich Presence-related chat embeds */
+	activity?: unknown;
+	/** Sent with Rich Presence-related chat embeds */
+	application?: unknown;
+
+	/**
+	 * If the message is a response to an Interaction, this is the id of the
+	 * interaction's application.
+	 */
+	application_id?: Snowflake;
+
+	/**
+	 * Data showing the source of a crosspost, channel follow add, pin, or
+	 * reply message
+	 */
+	message_reference?: unknown;
+	/** The message associated with the message_reference */
+	referenced_message?: unknown;
+
+	/** The message flags combined as a bitfield */
+	flags?: number;
+
+	/** Sent if the message is a response to a non-component Interaction event */
+	interaction?: unknown;
+
+	/**
+	 * The thread that was started from this message, includes the thread
+	 * member object
+	 */
+	thread?: unknown;
+
+	/**
+	 * Sent if the message contains components like buttons, action rows, or
+	 * other interactive components.
+	 */
+	components?: unknown[];
+
+	/** Sent if the message contains stickers. */
+	sticker_items?: unknown[];
+
+	/**
+	 * ! DEPRECATED
+	 * The stickers sent with the message
+	 */
+	stickers?: unknown[];
 }
