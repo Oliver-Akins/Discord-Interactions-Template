@@ -1,6 +1,7 @@
 config.toml
 data/
 .vscode/
+temp-*/
 
 # Logs
 logs
