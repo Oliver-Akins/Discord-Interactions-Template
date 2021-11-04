@@ -1,6 +1,8 @@
 import { log } from "~/main";
 
 const user_select: DynamicComponent = {
+	custom_id: `user-select`,
+
 	create(...args: [Interaction, ...unknown[]]): SelectMenu {
 		log.silly(`Creating the user's dropdown object`);
 		let [ event, ..._ ] = args;
@@ -17,7 +19,7 @@ const user_select: DynamicComponent = {
 
 		return {
 			type: MessageComponentType.SelectMenu,
-			custom_id: `user-select`,
+			custom_id: this.custom_id,
 			options,
 			min_values: 0,
 			max_values: 2,
