@@ -1,5 +1,13 @@
-interface Component {
-	structure: Exclude<MessageComponent, ActionRow>;
+interface BaseComponent {
+	processor(event: Interaction): any;
+}
 
-	processor(event: Interaction): InteractionResponse;
+interface StaticComponent extends BaseComponent {
+	create?: never;
+	structure: Components;
+}
+
+interface DynamicComponent extends BaseComponent {
+	create(...args: unknown[]): Components;
+	structure?: never;
 }
