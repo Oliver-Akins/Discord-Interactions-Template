@@ -18,7 +18,9 @@ interface Interaction {
 	message: Message;
 }
 
-type InteractionData = AppCommandData | ContextMenuCommand | ComponentData | SelectMenuData;
+type InteractionData = CommandPayload | ComponentPayload;
+
+type CommandPayload = AppCommandData | ContextMenuCommand;
 
 interface AppCommandData {
 	id: Snowflake;
@@ -47,6 +49,8 @@ interface OptionData {
 interface ContextMenuCommand extends AppCommandData {
 	target_id: Snowflake;
 }
+
+type ComponentPayload = ComponentData | SelectMenuData;
 
 interface ComponentData {
 	custom_id: string;
@@ -92,6 +96,40 @@ interface CommandOptionChoice {
 	value: string | number;
 }
 
+
+//===========================================================================\\
+// APPLICATION COMMANDS
+
+type AppCommand = AppCommandBase | AppSlashCommand;
+
+interface AppCommandBase {
+	id: Snowflake;
+
+	/**
+	 * The type of this command in Discord.
+	 *
+	 * Defaults: `CommandType.slash`
+	 */
+	type?: CommandType;
+	application_id: Snowflake;
+	guild_id?: Snowflake;
+	name: string;
+	description: string;
+
+	/**
+	 * Whether or not the command is enabled by default when the app is added to
+	 * a guild.
+	 *
+	 * Default: `true`
+	 */
+	default_permission?: boolean;
+
+	version: Snowflake;
+}
+
+interface AppSlashCommand extends AppCommandBase {
+	options: unknown[];
+}
 
 //===========================================================================\\
 // MESSAGE COMPONENTS
