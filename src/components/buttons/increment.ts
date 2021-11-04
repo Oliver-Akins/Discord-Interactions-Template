@@ -1,6 +1,6 @@
 import { log } from "~/main";
 
-const increment_button: Component = {
+const increment_button: StaticComponent = {
 	structure: {
 		custom_id: `increment`,
 		type: MessageComponentType.Button,

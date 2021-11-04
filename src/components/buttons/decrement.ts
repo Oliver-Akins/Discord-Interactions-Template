@@ -1,6 +1,6 @@
 import { log } from "~/main";
 
-const decrement_button: Component = {
+const decrement_button: StaticComponent = {
 	structure: {
 		custom_id: `decrement`,
 		type: MessageComponentType.Button,
