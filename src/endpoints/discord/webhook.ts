@@ -1,4 +1,3 @@
-import { InteractionResponseType, InteractionType } from "~/utils/enums/InteractionType";
 import { Request, ResponseToolkit } from "@hapi/hapi";
 import { config, db, log } from "~/main";
 import boom from "@hapi/boom";
@@ -27,7 +26,7 @@ export default {
 		};
 		//===================================================================\\
 
-		let data: Interaction = request.payload as Interaction;
+		let data = request.payload as Interaction;
 
 		let event;
 		switch (data.type) {
@@ -41,12 +40,12 @@ export default {
 			// Command interaction events (both autocomplete and the final event)
 			case InteractionType.AutoComplete:
 			case InteractionType.ApplicationCommand:
-				event = data.data as ApplicationCommandInteractionData;
+				event = data.data as CommandPayload;
 				return db.commands[event.name].processor(data);
 
 			// Events originating from a button
 			case InteractionType.MessageComponent:
-				event = data.data as MessageComponentInteractionData;
+				event = data.data as ComponentPayload;
 				return db.components[event.custom_id].processor(data);
 
 			// Any events that aren't caught
