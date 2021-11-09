@@ -11,7 +11,7 @@ export async function init_components() {
 	);
 
 	for (var component_path of components) {
-		log.info(`Component identified from: ${component_path}`);
+		log.debug(`Component identified from: ${component_path}`);
 
 		let component: Component = (
 			await import(path.join(__dirname, component_path))
