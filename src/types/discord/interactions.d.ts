@@ -30,6 +30,9 @@ interface AppCommandData {
 	options?: CommandOptionData[];
 }
 
+interface ContextMenuCommand extends AppCommandData {
+	target_id: Snowflake;
+}
 type CommandOptionData = OptionData | SubcommandOptionData;
 
 interface SubcommandOptionData {
@@ -43,11 +46,6 @@ interface OptionData {
 	type: CommandOptionType;
 	value: any;
 	focused?: boolean;
-}
-
-
-interface ContextMenuCommand extends AppCommandData {
-	target_id: Snowflake;
 }
 
 type ComponentPayload = ComponentData | SelectMenuData;
