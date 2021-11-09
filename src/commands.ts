@@ -21,7 +21,7 @@ export async function init_commands() {
 		{ cwd: __dirname, nodir: true }
 	);
 
-	/* TODO
+	/*
 	Figure out how to structure the register object modification in a
 	logical way that doesn't spam the Discord API. This should follow
 	the below rules:
@@ -35,11 +35,22 @@ export async function init_commands() {
 	for (var cmdpath of commands) {
 		let command: Command = (await import(path.join(__dirname, cmdpath))).default;
 
-		// Verify command structure for Discord
-		if (!command.structure.name.match(/^[\w-]{1,32}$/u)) {
-			log.warn(`${command.structure.name} does not match Discord's requirements, skipping registration.`);
+		/*
+		Verify command structure for Discord. This confirms the following rules:
+		1) That slash commands cannot have any special characters except a dash
+		2) That context menu commands cannot have any any special characters
+			except dash and spaces.
+		*/
+		if (
+			(command.structure.type ?? 1) == 1
+			&& !command.structure.name.match(/^[\w-]{1,32}$/u)
+		) {
+			log.warn(`${command.structure.name} doesn't match Discord's requirements, skipping registration.`);
 			continue;
-		};
+		} else if (!command.structure.name.match(/^[\w\- ]{1,32}$/u)) {
+			log.warn(`${command.structure.name} doesn't match Discord's requirements, skipping registration`);
+			continue;
+		}
 
 		if (command.enabled) {
 			log.debug(`Attempting to register command: ${command.structure.name}`);
