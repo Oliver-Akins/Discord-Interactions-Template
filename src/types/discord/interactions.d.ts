@@ -9,8 +9,8 @@ interface Interaction {
 	guild_id?: Snowflake;
 	channel_id?: Snowflake;
 
-	member?: unknown;
-	user?: unknown;
+	member?: GuildMember;
+	user?: User;
 
 	token: string;
 	version: number;
