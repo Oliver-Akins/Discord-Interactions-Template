@@ -1,10 +1,10 @@
 // Filepath alias resolution
 import "module-alias/register";
 
+import { clean_exit } from "~/utils/clean_exit";
 import { init_components } from "~/components";
 import { init_webserver } from "~/webserver";
 import { init_commands } from "~/commands";
-import { default_db } from "~/constants";
 import { Logger } from "tslog";
 import toml from "toml";
 import fs from "fs";
@@ -33,13 +33,27 @@ export const log = new Logger({
 if (!fs.existsSync(`data/db.json`)) {
 	log.info(`Can't find database file, creating default`);
 	try {
-		fs.writeFileSync(`data/db.json`, default_db);
+		fs.writeFileSync(`data/db.json`, `{}`);
 	} catch (err) {
 		log.error(`Unable to create the default database, make sure the data directory exists.`);
 		process.exit(1);
 	};
 };
-export const db: Database = JSON.parse(fs.readFileSync(`data/db.json`, `utf-8`));
+export const db: Database = {
+	commands: {},
+	components: {},
+	raw: {
+		global: [],
+		guilds: {},
+	},
+	storage: JSON.parse(fs.readFileSync(`data/db.json`, `utf-8`))
+};
+
+
+// Signal listeners to save persistent storage
+process.on(`SIGINT`, clean_exit);
+process.on(`SIGTERM`, clean_exit);
+process.on(`uncaughtException`, clean_exit);
 
 
 // Setup the utilities that are needed throughout the system
