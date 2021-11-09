@@ -26,13 +26,22 @@ interface AppCommandData {
 	id: Snowflake;
 	name: string;
 	type: CommandType;
-	resolved?: unknown[];
+	resolved?: ResolvedReferences;
 	options?: CommandOptionData[];
 }
 
 interface ContextMenuCommand extends AppCommandData {
 	target_id: Snowflake;
 }
+
+interface ResolvedReferences {
+	users?: {[index: string]: User};
+	roles?: {[index: string]: unknown};
+	members?: {[index: string]: GuildMember};
+	channels?: {[index: string]: unknown};
+	messages?: {[index: string]: unknown};
+}
+
 type CommandOptionData = OptionData | SubcommandOptionData;
 
 interface SubcommandOptionData {
