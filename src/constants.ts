@@ -1,0 +1,1 @@
+export const discord_api_base = `https://discord.com/api/v9`;

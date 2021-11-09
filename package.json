@@ -1,0 +1,36 @@
+{
+  "name": "discord-interactions-template",
+  "version": "1.0.0",
+  "description": "A template for creating interaction-based systems for Discord",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oliver-Akins/Discord-Interactions-Template.git"
+  },
+  "author": "Oliver Akins",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Oliver-Akins/Discord-Interactions-Template/issues"
+  },
+  "homepage": "https://github.com/Oliver-Akins/Discord-Interactions-Template#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.2.1",
+    "axios": "^0.24.0",
+    "glob": "^7.2.0",
+    "module-alias": "^2.2.2",
+    "path": "^0.12.7",
+    "toml": "^3.0.0",
+    "tslog": "^3.2.2",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/hapi__hapi": "^20.0.9"
+  },
+  "_moduleAliases": {
+    "~": "./dist"
+  }
+}
