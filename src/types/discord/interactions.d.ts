@@ -39,7 +39,7 @@ interface ResolvedReferences {
 	roles?: {[index: string]: unknown};
 	members?: {[index: string]: GuildMember};
 	channels?: {[index: string]: unknown};
-	messages?: {[index: string]: unknown};
+	messages?: {[index: string]: Message};
 }
 
 type CommandOptionData = OptionData | SubcommandOptionData;
