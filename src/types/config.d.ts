@@ -9,11 +9,10 @@ interface Config {
 		token: string;
 	};
 	server: {
-		host: string;
 		port: number;
 	};
 	log: {
-		name: string;
+		name?: string;
 		level: "silly" | "trace" | "debug" | "info" | "warn" | "error" | "fatal";
 	};
 };

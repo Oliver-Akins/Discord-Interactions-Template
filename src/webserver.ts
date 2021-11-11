@@ -21,6 +21,6 @@ export async function init_webserver() {
 	};
 
 	server.start().then(() => {
-		log.info(`Server running on: ${config.server.host}:${config.server.port}`);
+		log.info(`Server running on port ${config.server.port}`);
 	});
 };
