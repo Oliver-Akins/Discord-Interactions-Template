@@ -42,18 +42,11 @@ interface ResolvedReferences {
 	messages?: {[index: string]: Message};
 }
 
-type CommandOptionData = OptionData | SubcommandOptionData;
-
-interface SubcommandOptionData {
-	name: string;
-	type: CommandOptionType.Subcommand | CommandOptionType.SubcommandGroup;
-	options: CommandOptionData[];
-}
-
-interface OptionData {
+interface CommandOptionData {
 	name: string;
 	type: CommandOptionType;
-	value: any;
+	value?: any;
+	options?: CommandOptionData[];
 	focused?: boolean;
 }
 
@@ -77,6 +70,8 @@ interface InteractionResponse {
 	type: InteractionResponseType;
 	data?: InteractionResponseData;
 }
+
+type InteractionResponseData = MessageResponse | AutocompleteResponse
 
 interface MessageResponse {
 	tts?: boolean;
