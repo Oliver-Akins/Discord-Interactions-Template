@@ -39,14 +39,12 @@ if (!fs.existsSync(`data/db.json`)) {
 		process.exit(1);
 	};
 };
+let db_data = JSON.parse(fs.readFileSync(`data/db.json`, `utf-8`));
 export const db: Database = {
 	commands: {},
 	components: {},
-	raw: {
-		global: [],
-		guilds: {},
-	},
-	storage: JSON.parse(fs.readFileSync(`data/db.json`, `utf-8`))
+	raw: db_data.raw,
+	storage: db_data.storage,
 };
 
 

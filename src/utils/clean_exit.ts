@@ -8,7 +8,10 @@ export function clean_exit() {
 	try {
 		fs.writeFileSync(
 			`./data/db.json`,
-			JSON.stringify(db.storage)
+			JSON.stringify({
+				storage: db.storage,
+				raw: db.raw,
+			})
 		);
 	} catch (err) {
 		log.error(`Couldn't save program storage properly, writing to log.`, db.storage);
