@@ -1,0 +1,40 @@
+[discord]
+
+# The bot token's ID, this allows accessing the Discord API from commands and
+# components, and is also used to register all of the various commands that are
+# setup within the system.
+token = ""
+
+# The Discord application ID
+app_id = ""
+
+# The public key that is used to decrypt data from Discord
+public_key = ""
+
+
+#=============================================================================#
+[server]
+# The port the server is to run on
+port = 3002
+
+
+#=============================================================================#
+[log]
+
+# The primary name displayed in the logger
+name = "Interactions Template"
+
+# The minimum level to display in the log
+level = "info"
+
+
+#=============================================================================#
+# The developer-mode options
+[dev]
+
+# Whether or not developer mode is enabled, if this is enabled, it registers all
+# commands as guild specific commands and none as global commands
+enabled = true
+
+# This is the guild that the developer mode option will register commands under
+guild = ""
