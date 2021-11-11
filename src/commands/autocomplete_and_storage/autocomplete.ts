@@ -12,6 +12,7 @@ const data: Command = {
 				type: CommandOptionType.String,
 				name: `option`,
 				description: `What do you want?`,
+				required: true,
 
 				// Make sure to tell Discord that we want auto-complete events
 				// for this option, otherwise we won't get them
