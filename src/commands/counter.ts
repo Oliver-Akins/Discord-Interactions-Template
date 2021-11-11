@@ -1,6 +1,6 @@
-import decrement_button from "../components/buttons/decrement";
-import increment_button from "../components/buttons/increment";
-import { log } from "../main";
+import decrement_button from "~/components/buttons/decrement";
+import increment_button from "~/components/buttons/increment";
+import { log } from "~/main";
 
 const data: Command = {
 	enabled: true,

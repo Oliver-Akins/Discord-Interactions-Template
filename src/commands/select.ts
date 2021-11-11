@@ -1,5 +1,5 @@
 import user_select from "~/components/dropdowns/user_created";
-import { log } from "../main";
+import { log } from "~/main";
 
 const data: Command = {
 	enabled: true,

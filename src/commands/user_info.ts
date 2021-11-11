@@ -1,4 +1,4 @@
-import { log } from "../main";
+import { log } from "~/main";
 
 const data: Command = {
 	enabled: true,
